@@ -14,10 +14,7 @@ namespace CastleWindsor.Bootstrapping
 		public void BootStrap()
 		{
 			Console.WriteLine("Testing");
-			Container.Register(Classes.FromThisAssembly()
-					.InSameNamespaceAs<IThinger>()
-					.WithService.DefaultInterfaces()
-					.LifestyleTransient());
+			Container.Register(Component.For<IThinger>().ImplementedBy<Thinger>());
 		}
 	}
 }
